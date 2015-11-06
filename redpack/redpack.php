@@ -1,7 +1,15 @@
 <?php
 
+/**
+ * @auther: dingzhihao
+ * @update: 2015-11-06
+ *
+ */
+
+
 // 幸运指数。值越小，越先抢到的金额可能越多；反之。
 define('THE_LUCK_FACTOR', 2);
+
 // $money 最小单位: 1分。整数。
 function luck_money($money, $n)
 {
@@ -14,7 +22,7 @@ function luck_money($money, $n)
 
 
 
-// test
+// the test
 $times = 10;
 $total_money = $argv[1];
 $total_person = intval($argv[2]);
