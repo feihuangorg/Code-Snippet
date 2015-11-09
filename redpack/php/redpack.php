@@ -47,7 +47,16 @@ function redpack_test($money, $n, $times, $all_times)
         redpack_test($money, $n, $times-1, $all_times);
     }
 }
+// 
+function redpack_test_one($money, $n)
+{
+    echo "\n";
+    $the_money = luck_money($money, $n);
+    echo "\t".($the_money/100)."\n";
+}
 
+
+// main
 $money = $argv[1];
 $person = intval($argv[2]);
 $times = intval($argv[3]);
@@ -56,6 +65,7 @@ echo "money:\t{$money}\n";
 echo "person:\t{$person}\n"; 
 
 redpack_test($money, $person, $times, $times);
+// redpack_test_one($money, $person);
 
 echo "\n";
 
