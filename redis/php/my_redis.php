@@ -25,8 +25,9 @@ class my_redis
             self::$_redis = new Redis();
             
             // get the config setting
-            $redis_ip = '127.0.0.1';
-            $redis_port = 6379;
+            $config = json_decode(file_get_contents('my_redis.conf'), true);
+            $redis_ip = $config['redis']['ip'];
+            $redis_port = $config['redis']['port'];
 
             // connection setting
             self::$_redis->pconnect($redis_ip, $redis_port);
